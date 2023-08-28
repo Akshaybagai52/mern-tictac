@@ -61,7 +61,7 @@ const Board: React.FC<BoardProps> = ({ xIsNext, squares, onPlay }) => {
     );
 };
 
-function calculateWinner(squares: Array<string | null>): string | null {
+export function calculateWinner(squares: Array<string | null>): string | null {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],

@@ -28,11 +28,16 @@ const HomePage: React.FC = () => {
       <h2>Recent Games</h2>
       <ul>
         {games.map((game) => (
+          <>
+          {console.log(game)}
+
           <li key={game._id}>
+            {/* <p>{game}</p> */}
             <p>Player 1: {game.player1}</p>
             <p>Player 2: {game.player2}</p>
             <p>Outcome: {game.outcome}</p>
           </li>
+          </>
         ))}
       </ul>
     </div>

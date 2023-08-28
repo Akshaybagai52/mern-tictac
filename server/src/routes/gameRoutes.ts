@@ -12,13 +12,13 @@ router.get('/games', async (req: Request, res: Response) => {
 });
 
 router.post('/games', async (req: Request, res: Response) => {
-  const { player1, player2 } = req.body;
+  const { player1, player2, outcome } = req.body;
 
   try {
     const newGame = new Game({
       player1,
       player2,
-      outcome: '',
+      outcome,
     });
 
     await newGame.save();
