@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 
 const Game = () => {
     const data = useLocation()
-    console.log(data?.state,"datas");
     
     const [xIsNext, setXIsNext] = useState<boolean>(true);
     const [history, setHistory] = useState<Array<Array<string | null>>>([Array(9).fill(null)]);
@@ -39,9 +38,8 @@ const Game = () => {
             const winnerData = {
                 player1: data.state.playerNames.player1,
                 player2:data.state.playerNames.player2,
-                outcome: winner==="X" ?  data.state.playerNames.player1 + "won" :data.state.playerNames.player2 + " won" 
+                outcome: winner==="X" ?  data.state.playerNames.player1 + " won" :data.state.playerNames.player2 + " won" 
             };
-            console.log("winnerData", winnerData)
 
             axios.post('http://localhost:3000/api/games', winnerData)
                 .then(response => {
