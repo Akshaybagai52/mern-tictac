@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import gameRoutes from './routes/gameRoutes';
 import cors from 'cors'
 
-const MONGO_URI = 'mongodb+srv://Akshaybagai:OyMNGZj1rxUTThRE@cluster0.8i16ygx.mongodb.net/?retryWrites=true&w=majority';;
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_URI);
 
